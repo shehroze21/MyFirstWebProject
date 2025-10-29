@@ -1,0 +1,138 @@
+
+<html>
+<head>
+<title>Task3</title>
+<!--<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+.form-container {
+    width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+    color: #ff0000;
+}
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.form-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #add8e6;
+}
+.form-table td:first-child {
+    width: 30%;
+    font-weight: bold;
+}
+.form-table td:last-child {
+    width: 70%;
+    background-color: #e6f2ff;
+}
+.form-table input[type="text"] {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.form-table .radio-group label,
+.form-table .checkbox-group label {
+    margin-right: 15px;
+}
+.form-table input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.form-table input[type="submit"]:hover {
+    background-color: #45a049;
+}
+</style>-->
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Continental Hotel Reservation Form</h1>
+    <form action="/submit-form" method="post">
+        <table class="form-table">
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" placeholder="Enter your name"></td>
+            </tr>
+            <tr>
+                <td>eMail</td>
+                <td><input type="text" name="email" placeholder="info@continental.pk"></td>
+            </tr>
+            <tr>
+                <td>Mobile No</td>
+                <td><input type="text" name="mobile" placeholder="Enter your cell number"></td>
+            </tr>
+            <tr>
+                <td>Arrival Time</td>
+                <td><input type="text" name="arrival_time" placeholder="Enter your arrival time"></td>
+            </tr>
+            <tr>
+                <td>Departure</td>
+                <td><input type="text" name="departure_date"></td>
+            </tr>
+            <tr>
+                <td>Room Type</td>
+                <td>
+                    <div class="radio-group">
+                        <input type="radio" id="single" name="room_type" value="single">
+                        <label for="single">Single</label><br>
+                        <input type="radio" id="double" name="room_type" value="double">
+                        <label for="double">Double</label><br>
+                        <input type="radio" id="presidential" name="room_type" value="presidential">
+                        <label for="presidential">Presidential Suite</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Preferences</td>
+                <td>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="non_smoking" name="preferences" value="non_smoking">
+                        <label for="non_smoking">Non-Smoking</label><br>
+                        <input type="checkbox" id="internet" name="preferences" value="internet">
+                        <label for="internet">Internet</label><br>
+                        <input type="checkbox" id="firm_mattress" name="preferences" value="firm_mattress">
+                        <label for="firm_mattress">Firm Mattress</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Mode of Payment</td>
+                <td>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="cash" name="payment_mode" value="cash">
+                        <label for="cash">Cash</label><br>
+                        <input type="checkbox" id="check" name="payment_mode" value="check">
+                        <label for="check">Check</label><br>
+                        <input type="checkbox" id="credit_card" name="payment_mode" value="credit_card">
+                        <label for="credit_card">Credit Card <select><option>Select Card</option></select></label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Send Data"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>
