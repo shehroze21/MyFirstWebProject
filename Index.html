@@ -1,137 +1,152 @@
-
 <html>
 <head>
-<title>Task3</title>
-<!--<style>
+<meta charset="UTF-8">
+<title>Victoria's Journal</title>
+<style>
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+  background-color: #e5ebeb;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
-.form-container {
-    width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+#container {
+  width: 850px;
+  margin: 30px auto;
+  background-color: #ffffff;
+  border: 8px solid #c5e9eb;
+  padding: 15px;
+  overflow: hidden;
 }
-h1 {
-    text-align: center;
-    color: #ff0000;
+
+.header {
+  background-color: #b6e7eb;
+  padding: 10px 20px;
+  margin: -15px -15px 20px -15px;
+  text-align: right;
 }
-.form-table {
-    width: 100%;
-    border-collapse: collapse;
+.header h1 {
+  font-family: "Georgia", serif;
+  color: #40a3a3;
+  font-size: 36px;
+  font-weight: normal;
+  margin: 0;
 }
-.form-table td {
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: #add8e6;
+.header h3 {
+  color: #85c5c5;
+  font-weight: normal;
+  margin: 0;
+  font-size: 14px;
 }
-.form-table td:first-child {
-    width: 30%;
-    font-weight: bold;
+
+#friends {
+  float: left;
+  width: 180px;
+  background-color: #9fd2d1;
+  border: 2px solid #4ea1a0;
+  padding: 10px;
+  margin-right: 20px;
 }
-.form-table td:last-child {
-    width: 70%;
-    background-color: #e6f2ff;
+#friends h2 {
+  color: #035a59;
+  font-size: 24px;
+  margin: 0 0 8px 0;
 }
-.form-table input[type="text"] {
-    width: 95%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+#friends ul {
+  list-style-type: disc;
+  margin: 0;
+  padding-left: 18px;
 }
-.form-table .radio-group label,
-.form-table .checkbox-group label {
-    margin-right: 15px;
+#friends li {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #004d4d;
 }
-.form-table input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+#friends li:nth-child(1),
+#friends li:nth-child(2) {
+  color: #ef5c5c;
 }
-.form-table input[type="submit"]:hover {
-    background-color: #45a049;
+#friends li:nth-child(3) {
+  color: #0066cc;
 }
-</style>-->
+
+#content {
+  float: left;
+  width: 620px; /* ensures it starts from same point as top entry */
+}
+
+.entry {
+  background-color: #e8f6f6;
+  border: 2px solid #b7dddd;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  min-height: 150px;
+}
+
+.entry h2 {
+  color: #38a0a0;
+  font-size: 20px;
+  font-family: "Georgia", serif;
+  font-weight: normal;
+  border-bottom: 2px dotted #67bcbc;
+  padding-bottom: 5px;
+  margin-top: 0;
+}
+.entry .date {
+  color: #0076a3;
+  font-weight: bold;
+  text-decoration: underline dotted #0076a3;
+}
+
+.entry p {
+  font-size: 14px;
+  color: #555555;
+  line-height: 1.4;
+  width: 70%;
+  float: left;
+  margin-top: 8px;
+}
+
+.entry img {
+  float: right;
+  width: 120px;
+  margin-top: 5px;
+  margin-left: 20px;
+  border: 2px solid #d0ecec;
+}
+</style>
 </head>
 <body>
 
-<div class="form-container">
-    <h1>Continental Hotel Reservation Form</h1>
-    <form action="/submit-form" method="post">
-        <table class="form-table">
-            <tr>
-                <td>Name</td>
-                <td><input type="text" name="name" placeholder="Enter your name"></td>
-            </tr>
-            <tr>
-                <td>eMail</td>
-                <td><input type="text" name="email" placeholder="info@continental.pk"></td>
-            </tr>
-            <tr>
-                <td>Mobile No</td>
-                <td><input type="text" name="mobile" placeholder="Enter your cell number"></td>
-            </tr>
-            <tr>
-                <td>Arrival Time</td>
-                <td><input type="text" name="arrival_time" placeholder="Enter your arrival time"></td>
-            </tr>
-            <tr>
-                <td>Departure</td>
-                <td><input type="text" name="departure_date"></td>
-            </tr>
-            <tr>
-                <td>Room Type</td>
-                <td>
-                    <div class="radio-group">
-                        <input type="radio" id="single" name="room_type" value="single">
-                        <label for="single">Single</label><br>
-                        <input type="radio" id="double" name="room_type" value="double">
-                        <label for="double">Double</label><br>
-                        <input type="radio" id="presidential" name="room_type" value="presidential">
-                        <label for="presidential">Presidential Suite</label>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>Preferences</td>
-                <td>
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="non_smoking" name="preferences" value="non_smoking">
-                        <label for="non_smoking">Non-Smoking</label><br>
-                        <input type="checkbox" id="internet" name="preferences" value="internet">
-                        <label for="internet">Internet</label><br>
-                        <input type="checkbox" id="firm_mattress" name="preferences" value="firm_mattress">
-                        <label for="firm_mattress">Firm Mattress</label>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>Mode of Payment</td>
-                <td>
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="cash" name="payment_mode" value="cash">
-                        <label for="cash">Cash</label><br>
-                        <input type="checkbox" id="check" name="payment_mode" value="check">
-                        <label for="check">Check</label><br>
-                        <input type="checkbox" id="credit_card" name="payment_mode" value="credit_card">
-                        <label for="credit_card">Credit Card <select><option>Select Card</option></select></label>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2"><input type="submit" value="Send Data"></td>
-            </tr>
-        </table>
-    </form>
+<div id="container">
+  <div class="header">
+    <h1>Victoria's Journal</h1>
+    <h3>So fresh and so clean</h3>
+  </div>
+
+  <div id="friends">
+    <h2>Friends</h2>
+    <ul>
+      <li>390 Buddies</li>
+      <li>Big Will</li>
+      <li>Conan the Librarian</li>
+    </ul>
+  </div>
+
+  <div id="content">
+    <div class="entry">
+      <h2><span class="date">04/09/08:</span> Spatulas</h2>
+      <img src="Multipurpose-Silicone-Spatula.jpg" alt="spatula">
+      <p>Yesterday, I went to the store and got some much needed spatulas! (What better way to say I love myself than to buy myself a spatula?)</p>
+    </div>
+
+    <div class="entry">
+      <h2><span class="date">04/08/08:</span> Cookie Cupcakes</h2>
+      <img src="super-villains-imagined-as-delicious-cupcakes-for-halloween-halloween-recipe-for-an-evil-cupcake-that-will-give-you-mouth-watering-nightmares-2G6C6D1.jpg" alt="cupcakes">
+      <p>My favorite cartoon character is Cookie, and my favorite dessert is cupcakes. So Cookie Cupcakes are best of both worlds. Did you know? Cookie character once said, “Sometimes me think what is love, and then me think love is what cookie is for.” Me give up the last cookie for you. I wonder if the same applies for cupcakes! (If so, I don’t think I can ever love ANYONE!)</p>
+    </div>
+  </div>
 </div>
 
 </body>
